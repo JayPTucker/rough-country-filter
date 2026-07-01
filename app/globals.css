@@ -29,9 +29,18 @@ body {
 /* FRONT PAGE CSS */
 /*  ========================================================== */
 
+.vehicleMakeSelect {
+  width: 20%;
+  padding: 8px;
+  border: 1px solid  var(--foreground);
+  border-radius: 4px;
+  background-color: var(--background) !important;
+  color: var(--foreground);
+  font-size: 1rem;
+}
 
 .productCard {
-  border: 1px solid #ccc;
+  border: 1px solid  var(--foreground);
   border-radius: 8px;
   padding: 16px;
   margin: 16px;
