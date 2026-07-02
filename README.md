@@ -4,7 +4,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Overview
 
-This project is a simple product filtering application built with Next.js, React, and TypeScript. It allows users to browse Rough Country products and filter them by vehicle make and year.
+This project is a simple product filtering application built with Next.js, React, and TypeScript. It allows users to browse Rough Country products and filter them by vehicle make and year all while showing the amount of products found. The application is designed with a clean, component-based architecture and utilizes Tailwind CSS for styling.
 
 ---
 
