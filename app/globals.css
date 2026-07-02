@@ -38,6 +38,40 @@ body {
   color: var(--foreground);
   font-size: 1rem;
   margin-bottom: 15px;
+  transition: all 0.1s ease-in-out !important;
+}
+
+.vehicleMakeSelect:hover, .vehicleYearSelect:hover, .vehicleMakeSelect:focus, .vehicleYearSelect:focus {
+  outline: none;
+  border-color: red;
+  box-shadow: 0 0 5px red;
+}
+
+.resetBtnEnable {
+  background-color: var(--background);
+  color: var(--foreground);
+  border: 1px solid  var(--foreground);
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 20% !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.resetBtnEnable:hover {
+  background-color: rgba(255, 0, 0, 0.189);
+  color: red;
+  border: 1px solid  red;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.resetBtnDisable {
+  background-color: var(--background);
+  color: color-mix(in srgb, var(--foreground) 40%, black);
+  border: 1px solid color-mix(in srgb, var(--foreground) 40%, black) !important;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: not-allowed;
 }
 
 .productCard {
@@ -62,3 +96,27 @@ body {
 }
 
 /*  ========================================================== */
+/* ANIMATION CSS */
+/*  ========================================================== */
+
+@keyframes shatter {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  40% {
+    transform: scale(1.05) rotate(-2deg);
+  }
+
+  100% {
+    transform: scale(0.2) rotate(15deg);
+    opacity: 0;
+    filter: blur(8px);
+  }
+}
+
+.shatter {
+  animation: shatter .35s ease forwards;
+}

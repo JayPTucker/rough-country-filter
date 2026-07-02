@@ -28,6 +28,11 @@ export default function Home() {
     return matchesMake && matchesYear;
   });
 
+  const resetButton = () => {
+    setSelectedMake("All");
+    setSelectedYear("All");
+  };
+
   
   return (
     <main className="max-w-5xl mx-auto p-8">
@@ -43,6 +48,7 @@ export default function Home() {
         setSelectedMake={setSelectedMake}
         selectedYear={selectedYear}
         setSelectedYear={setSelectedYear}
+        resetFilters={resetButton}
       />
 
       {/* Display the filtered products using the ProductList component */}

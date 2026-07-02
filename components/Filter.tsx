@@ -6,6 +6,7 @@ interface FilterProps {
   setSelectedMake: (make: string) => void;
   selectedYear?: string;
   setSelectedYear?: (year: string) => void;
+  resetFilters: () => void;
 }
 
 // Filter component to allow users to select a vehicle make for filtering products
@@ -15,9 +16,18 @@ export default function Filter({
   setSelectedMake,
   selectedYear,
   setSelectedYear,
+  resetFilters,
 
 }: FilterProps) {
 
+    // .map() method is used to create a new array of unique vehicle makes and years from the 
+    // MOCK_PRODUCTS data. The "All" option is added to the beginning of each array to allow 
+    // users to select all makes or years.
+    // new Set is a collection of unique values, so it is used to remove duplicates from the array of makes and years.
+    // Since set is not an array we have to convert it back into one with the spread operator (...). 
+    // The spread operator is used to spread the values of the Set into a new array.
+    // Then "All" is added to the beginning of the array using the spread operator again. 
+    // This allows users to select all makes or years.
     const makes = [
         "All",
         ...new Set(MOCK_PRODUCTS.map((product) => product.make)),
@@ -71,6 +81,20 @@ export default function Filter({
                 </option>
             ))}
         </select>
+
+        <br></br>
+
+        {/* Custom button so we can have it automatically change class based on the state */}
+        <button
+        onClick={resetFilters}
+        className={`resetButton ${selectedMake === "All" && selectedYear === "All" ? "resetBtnDisable" : "resetBtnEnable"}`}
+        disabled={selectedMake === "All" && selectedYear === "All"}
+        >
+            Reset Filters
+        </button>
+
+
+
     </div>
   );
 }

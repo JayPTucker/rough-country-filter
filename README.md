@@ -1,36 +1,96 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Rough Country Product Filter
 
-First, run the development server:
+## Overview
+
+This project is a simple product filtering application built with Next.js, React, and TypeScript. It allows users to browse Rough Country products and filter them by vehicle make and year.
+
+---
+
+## Features Completed
+
+### Core Requirements
+
+- Display all products
+- Filter products by vehicle make
+- Display a helpful empty state when no products match
+- Clean, component-based architecture
+
+### Bonus Features
+
+- Filter by vehicle year
+- Filter by make and year together
+- Reset Filters button
+- Improved styling with Tailwind CSS
+
+---
+
+## Technologies Used
+
+- Next.js (App Router)
+- React
+- TypeScript
+- Tailwind CSS
+
+---
+
+## Project Structure
+
+Below is a rough outline of the project structure I've made:
+
+```
+app/
+├── page.tsx
+
+components/
+├── Filter.tsx
+├── ProductCard.tsx
+└── ProductList.tsx
+
+data/
+└── product.ts
+
+types/
+└── product.ts
+```
+
+---
+
+## Running the Project
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser to:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Future Improvements
 
-To learn more about Next.js, take a look at the following resources:
+With more time, I would consider adding:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Product search
+- Sorting by price
+- Responsive mobile enhancements
+- Pagination or infinite scrolling
+- Server-side data fetching from an API
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Notes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The make and year dropdown options are generated dynamically from the product data rather than being hardcoded. This makes the filters easier to maintain if new products or vehicle information are added in the future.
