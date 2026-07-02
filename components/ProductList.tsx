@@ -15,7 +15,7 @@ export default function ProductList({
     if (products.length === 0) {
     return (
             <p className="text-gray-500">
-                No products found for this make.
+                No products found matching the make and year selected. Please try a different filter.
             </p>
         );
     }

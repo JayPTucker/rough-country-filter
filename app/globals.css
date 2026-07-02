@@ -29,7 +29,7 @@ body {
 /* FRONT PAGE CSS */
 /*  ========================================================== */
 
-.vehicleMakeSelect {
+.vehicleMakeSelect, .vehicleYearSelect {
   width: 20%;
   padding: 8px;
   border: 1px solid  var(--foreground);
@@ -37,6 +37,7 @@ body {
   background-color: var(--background) !important;
   color: var(--foreground);
   font-size: 1rem;
+  margin-bottom: 15px;
 }
 
 .productCard {

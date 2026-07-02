@@ -1,4 +1,6 @@
 // Added use client so the browser can remember the selected option, update state, and rerender the list.
+// By default, components in the App Router are Server components.   We used marked this page as Client Component
+// so that way it allows React Hooks to run in the browser and update the UI without refreshing the page.
 "use client";
 
 import { useState } from "react";
@@ -10,13 +12,21 @@ export default function Home() {
   // State to hold the selected vehicle make for filtering
   const [selectedMake, setSelectedMake] = useState("All");
 
+  // State to hold the selected vehicle year for filtering
+  const [selectedYear, setSelectedYear] = useState("All");
+
   // Derived State to Filter products based on the selected make (OTher way of making an If statement)
-  const filteredProducts =
-    selectedMake === "All"
-      ? MOCK_PRODUCTS
-      : MOCK_PRODUCTS.filter(
-          (product) => product.make === selectedMake
-        );
+  const filteredProducts = MOCK_PRODUCTS.filter((product) => {
+    const matchesMake =
+      selectedMake === "All" ||
+      product.make === selectedMake;
+
+    const matchesYear =
+      selectedYear === "All" ||
+      product.year.toString() === selectedYear;
+
+    return matchesMake && matchesYear;
+  });
 
   
   return (
@@ -31,6 +41,8 @@ export default function Home() {
       <Filter
         selectedMake={selectedMake}
         setSelectedMake={setSelectedMake}
+        selectedYear={selectedYear}
+        setSelectedYear={setSelectedYear}
       />
 
       {/* Display the filtered products using the ProductList component */}
