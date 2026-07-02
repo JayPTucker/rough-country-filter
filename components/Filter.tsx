@@ -1,3 +1,5 @@
+import { MOCK_PRODUCTS } from "@/data/products";
+
 // interface for the props of the Filter component
 interface FilterProps {
   selectedMake: string;
@@ -7,12 +9,25 @@ interface FilterProps {
 }
 
 // Filter component to allow users to select a vehicle make for filtering products
+
 export default function Filter({
   selectedMake,
   setSelectedMake,
   selectedYear,
   setSelectedYear,
+
 }: FilterProps) {
+
+    const makes = [
+        "All",
+        ...new Set(MOCK_PRODUCTS.map((product) => product.make)),
+    ];
+
+    const years = [
+        "All",
+        ...new Set(MOCK_PRODUCTS.map((product) => product.year.toString())),
+    ];
+
   return (
     <div className="mb-6">
         <label htmlFor="make" className="block">
@@ -28,12 +43,12 @@ export default function Filter({
         }
         className="vehicleMakeSelect"
         >
-            <option value="All">All Makes</option>
-            <option value="Ford">Ford</option>
-            <option value="Jeep">Jeep</option>
-            <option value="Toyota">Toyota</option>
-            <option value="Ram">Ram</option>
-            <option value="Chevrolet">Chevrolet</option>
+            {/* References lines 21-30 to make the app more scalable rather than input options manually */}
+            {makes.map((make) => (
+                <option key={make} value={make}>
+                    {make}
+                </option>
+            ))}
         </select>
 
         <label htmlFor="year" className="block">
@@ -49,11 +64,12 @@ export default function Filter({
         }
         className="vehicleYearSelect"
         >
-            <option value="All">All Years</option>
-            <option value="2020">2020</option>
-            <option value="2021">2021</option>
-            <option value="2022">2022</option>
-            <option value="2023">2023</option>
+            {/* References lines 21-30 to make the app more scalable rather than input options manually */}
+            {years.map((year) => (
+                <option key={year} value={year}>
+                    {year}
+                </option>
+            ))}
         </select>
     </div>
   );
