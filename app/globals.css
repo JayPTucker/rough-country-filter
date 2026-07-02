@@ -74,6 +74,10 @@ body {
   cursor: not-allowed;
 }
 
+/*  ========================================================== */
+/* PRODUCT CARDS */
+/*  ========================================================== */
+
 .productCard {
   border: 1px solid  var(--foreground);
   border-radius: 8px;
@@ -96,27 +100,3 @@ body {
 }
 
 /*  ========================================================== */
-/* ANIMATION CSS */
-/*  ========================================================== */
-
-@keyframes shatter {
-  0% {
-    transform: scale(1) rotate(0deg);
-    opacity: 1;
-    filter: blur(0);
-  }
-
-  40% {
-    transform: scale(1.05) rotate(-2deg);
-  }
-
-  100% {
-    transform: scale(0.2) rotate(15deg);
-    opacity: 0;
-    filter: blur(8px);
-  }
-}
-
-.shatter {
-  animation: shatter .35s ease forwards;
-}
