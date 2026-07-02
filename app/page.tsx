@@ -51,6 +51,11 @@ export default function Home() {
         resetFilters={resetButton}
       />
 
+      {/* Number of products found based on the selected make and year */}
+      <p className="productsCount">
+        {filteredProducts.length} products found
+      </p>
+
       {/* Display the filtered products using the ProductList component */}
       <ProductList products={filteredProducts} />
     </main>
