@@ -28,6 +28,7 @@ export default function Home() {
     return matchesMake && matchesYear;
   });
 
+  // Reset button
   const resetButton = () => {
     setSelectedMake("All");
     setSelectedYear("All");
